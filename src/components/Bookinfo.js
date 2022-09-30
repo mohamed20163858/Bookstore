@@ -1,10 +1,17 @@
+import PropTypes from 'prop-types';
+
 const Bookinfo = (props) => {
-    return (
-        <div>
-            <h3>{props.title}</h3>
-            <p>{props.author}</p>
-            <button>Remove</button>
-        </div>
-        );
-}
+  const { title, author } = props;
+  return (
+    <div>
+      <h3>{title}</h3>
+      <p>{author}</p>
+      <button type="submit">Remove</button>
+    </div>
+  );
+};
+Bookinfo.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+};
 export default Bookinfo;
