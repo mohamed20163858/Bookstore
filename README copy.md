@@ -1,20 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore : initial version
-> build a bookstore that has list of books and a form to add new book component
+# Math Magicians: Final version
+> build a very simple calculator to show react component abilities , all components are built using Functional hooks and JSX syntax
 
 ## Built With
 
-- html, css, javaScript, webpack, gitflow , React and React router
+- html, css, javaScript, webpack, gitflow and React
 
 ## Live Demo 
 
-[Live demo](https://mohamed20163858.github.io/Bookstore/)
+[Live demo](https://mohamed20163858.github.io/math_magicians/)
 
 ## Getting Started
 You can download the page by clicking in the code green button and select Download ZIP or if you are a developer 
-you can get the https link or ssh link just copy it and use your favourite command line git interface and write this `git clone https://github.com/mohamed20163858/Bookstore.git` if you use https or write 
-`git clone git@github.com:mohamed20163858/Bookstore.git` if you use ssh and then after installition you can run the application by opening your terminal change your directory to Bookstore folder then type `npm i` then type `npm start`. 
+you can get the https link or ssh link just copy it and use your favourite command line git interface and write this `git clone https://github.com/mohamed20163858/math_magicians.git` if you use https or write 
+`git clone git@github.com:mohamed20163858/math_magicians.git` if you use ssh and then after installition you can run the application by opening your terminal change your directory to math_magicians folder then type `npm i` then type `npm start`. 
 
 
 ## Author
