@@ -5,8 +5,8 @@ import categoryReducer from './categories/categories';
 
 const rootReducer = combineReducers(
   {
-    book: bookReducer,
-    categor: categoryReducer,
+    bookInfo: bookReducer,
+    categoryInfo: categoryReducer,
   },
 );
 const store = configureStore({ reducer: rootReducer });
