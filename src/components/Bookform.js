@@ -1,30 +1,35 @@
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { addBook } from '../redux/books/books';
+import { addBook, addBookInUI } from '../redux/books/books';
 
-const Bookform = (props) => {
-  const { numOfInitialElements } = props;
+const Bookform = () => {
   const initialInfo = {
-    id: numOfInitialElements,
+    id: 0,
     title: null,
     author: null,
     category: 'all',
   };
-  const [info, setInfo] = useState(initialInfo);
+  const [, setInfo] = useState(initialInfo);
   const dispatch = useDispatch();
   const sendData = (e) => {
     e.preventDefault();
     const bookName = e.target.querySelector('input:first-of-type');
     const bookAuthor = e.target.querySelector('input:last-of-type');
+    const lastElement = document.querySelector('.Books-info div:last-of-type');
+    let id = 0;
+    if (lastElement) {
+      id = +lastElement.id;
+    }
     const updatedInfo = {
-      id: `Book-${info.id + 1}`,
+      id: id + 1,
       title: bookName.value,
       author: bookAuthor.value,
       category: 'all',
     };
+    const prepare = addBook(updatedInfo);
     setInfo(updatedInfo);
-    dispatch(addBook(updatedInfo));
+    dispatch(addBookInUI(updatedInfo));
+    dispatch(prepare());
     bookName.value = '';
     bookAuthor.value = '';
   };
@@ -35,8 +40,5 @@ const Bookform = (props) => {
       <button type="submit">ADD BOOK</button>
     </form>
   );
-};
-Bookform.propTypes = {
-  numOfInitialElements: PropTypes.number.isRequired,
 };
 export default Bookform;
