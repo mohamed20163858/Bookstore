@@ -9,6 +9,7 @@ const Bookform = (props) => {
     id: numOfInitialElements,
     title: null,
     author: null,
+    category: 'all',
   };
   const [info, setInfo] = useState(initialInfo);
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const Bookform = (props) => {
       id: `Book-${info.id + 1}`,
       title: bookName.value,
       author: bookAuthor.value,
+      category: 'all',
     };
     setInfo(updatedInfo);
     dispatch(addBook(updatedInfo));
