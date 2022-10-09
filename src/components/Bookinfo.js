@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBook, removeBookInUI } from '../redux/books/books';
 
 const Bookinfo = (props) => {
   const { id, title, author } = props;
@@ -8,8 +8,9 @@ const Bookinfo = (props) => {
   const state = useSelector((state) => state.bookInfo);
   const removeAction = (e) => {
     for (let i = 0; i < state.length; i += 1) {
-      if (state[i].id === e.target.parentElement.id) {
-        dispatch(removeBook(i));
+      if (+state[i].id === +e.target.parentElement.id) {
+        dispatch(removeBookInUI(i));
+        dispatch(removeBook(e.target.parentElement.id)());
       }
     }
   };
