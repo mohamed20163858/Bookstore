@@ -1,9 +1,24 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+body {
+  padding: 4%;
+  background-color: #f5f6fa;
+}
+
 .outer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 2vw;
   margin-bottom: 15vh;
+  width: 95%;
+  padding: 20px 5%;
+  background-color: white;
 }
 
 .outer ul {
@@ -27,9 +42,24 @@
 }
 
 .outer a h1 {
-  font-size: 60px;
-  font-weight: bold;
-  color: black;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0290ff;
+}
+
+.outer .inner-3 {
+  border: 1px solid #e8e8e8;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer .inner-3 a i {
+  color: #0290ff;
+  font-size: 30px;
 }
 
 .visited {
