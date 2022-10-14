@@ -10,10 +10,11 @@ const Bookinfo = (props) => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.bookInfo);
   const removeAction = (e) => {
+    const targetDiv = e.target.parentElement.parentElement.parentElement.parentElement;
     for (let i = 0; i < state.length; i += 1) {
-      if (+state[i].id === +e.target.parentElement.id) {
+      if (+state[i].id === +targetDiv.id) {
         dispatch(removeBookInUI(i));
-        dispatch(removeBook(e.target.parentElement.id)());
+        dispatch(removeBook(targetDiv.id)());
       }
     }
   };

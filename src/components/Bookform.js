@@ -16,7 +16,7 @@ const Bookform = () => {
     const bookName = e.target.querySelector('input:first-of-type');
     const bookAuthor = e.target.querySelector('input:last-of-type');
     const bookType = e.target.querySelector('select');
-    const lastElement = document.querySelector('.Books-info div:last-of-type');
+    const lastElement = document.querySelector('.books-info div:last-of-type');
     let id = 0;
     if (lastElement) {
       id = +lastElement.id;
