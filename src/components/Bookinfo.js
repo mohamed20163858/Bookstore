@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeBook, removeBookInUI } from '../redux/books/books';
 
 const Bookinfo = (props) => {
-  const { id, title, author } = props;
+  const {
+    id, title, author, category,
+  } = props;
   const dispatch = useDispatch();
   const state = useSelector((state) => state.bookInfo);
   const removeAction = (e) => {
@@ -17,6 +19,7 @@ const Bookinfo = (props) => {
 
   return (
     <div id={id}>
+      <p>{category}</p>
       <h3>{title}</h3>
       <p>{author}</p>
       <button type="submit" onClick={removeAction}>Remove</button>
@@ -27,5 +30,6 @@ Bookinfo.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 export default Bookinfo;

@@ -10,7 +10,7 @@ const Books = () => {
   useEffect(() => () => dispatch(fetchAllBooks()()), [dispatch]);
   const infoState = useSelector((state) => state.bookInfo);
   for (let i = 0; i < infoState.length; i += 1) {
-    infoUI.push(<Bookinfo title={infoState[i].title} author={infoState[i].author} id={`${infoState[i].id}`} key={`book-${i + 1}`} />);
+    infoUI.push(<Bookinfo category={infoState[i].category} title={infoState[i].title} author={infoState[i].author} id={`${infoState[i].id}`} key={`book-${i + 1}`} />);
   }
   return (
     <>
