@@ -19,10 +19,11 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 0 2vw;
-  margin-bottom: 15vh;
-  width: 95%;
+  margin-bottom: 5vh;
+  width: 90%;
   padding: 20px 5%;
   background-color: white;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .outer ul {

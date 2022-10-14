@@ -14,7 +14,7 @@ const Books = () => {
   }
   return (
     <>
-      <div className="Books-info">
+      <div className="books-info">
         {infoUI}
       </div>
       <Bookform />
