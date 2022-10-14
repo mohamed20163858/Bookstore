@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addBook, addBookInUI } from '../redux/books/books';
+import './Bookform.css';
 
 const Bookform = () => {
   const initialInfo = {
@@ -35,16 +36,20 @@ const Bookform = () => {
     bookAuthor.value = '';
   };
   return (
-    <form onSubmit={sendData}>
-      <input type="text" placeholder="Book title" required />
-      <input type="text" placeholder="Book author" required />
-      <select>
-        <option value="Action">Action</option>
-        <option value="Science Fiction">Science Fiction</option>
-        <option value="Econmy">Econmy</option>
-      </select>
-      <button type="submit">ADD BOOK</button>
-    </form>
+    <div className="form">
+      <div className="hr" />
+      <p>Add new book</p>
+      <form onSubmit={sendData}>
+        <input type="text" placeholder="Book title" required />
+        <input type="text" placeholder="Book author" required />
+        <select>
+          <option value="Action">Action</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Econmy">Econmy</option>
+        </select>
+        <button type="submit">ADD BOOK</button>
+      </form>
+    </div>
   );
 };
 export default Bookform;
