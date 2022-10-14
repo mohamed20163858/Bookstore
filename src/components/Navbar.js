@@ -23,6 +23,9 @@ const Navbar = () => (
         <li><Link to="/Categories" onClick={visitPageAction}>Categories</Link></li>
       </ul>
     </div>
+    <div className="inner-3">
+      <Link to="/"><span><i className="fa-solid fa-user" /></span></Link>
+    </div>
   </div>
 );
 export default Navbar;

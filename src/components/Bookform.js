@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addBook, addBookInUI } from '../redux/books/books';
+import './Bookform.css';
 
 const Bookform = () => {
   const initialInfo = {
@@ -15,7 +16,8 @@ const Bookform = () => {
     e.preventDefault();
     const bookName = e.target.querySelector('input:first-of-type');
     const bookAuthor = e.target.querySelector('input:last-of-type');
-    const lastElement = document.querySelector('.Books-info div:last-of-type');
+    const bookType = e.target.querySelector('select');
+    const lastElement = document.querySelector('.books-info div:last-of-type');
     let id = 0;
     if (lastElement) {
       id = +lastElement.id;
@@ -24,7 +26,7 @@ const Bookform = () => {
       id: id + 1,
       title: bookName.value,
       author: bookAuthor.value,
-      category: 'all',
+      category: bookType.value,
     };
     const prepare = addBook(updatedInfo);
     setInfo(updatedInfo);
@@ -34,11 +36,20 @@ const Bookform = () => {
     bookAuthor.value = '';
   };
   return (
-    <form onSubmit={sendData}>
-      <input type="text" placeholder="Book title" required />
-      <input type="text" placeholder="Book author" required />
-      <button type="submit">ADD BOOK</button>
-    </form>
+    <div className="form">
+      <div className="hr" />
+      <p>Add new book</p>
+      <form onSubmit={sendData}>
+        <input type="text" placeholder="Book title" required />
+        <input type="text" placeholder="Book author" required />
+        <select>
+          <option value="Action">Action</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Econmy">Econmy</option>
+        </select>
+        <button type="submit">ADD BOOK</button>
+      </form>
+    </div>
   );
 };
 export default Bookform;
