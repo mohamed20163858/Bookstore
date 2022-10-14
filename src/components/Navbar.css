@@ -1,3 +1,7 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -32,13 +36,20 @@ body {
   color: rgb(51, 230, 230);
 }
 
-.outer .inner-1 a {
+.outer .inner-2 {
+  width: 40vw;
+}
+
+.outer .inner-1 a,
+.outer .inner-2 a {
   text-decoration: none;
 }
 
-.outer .inner-2 li:not(:last-of-type) {
-  border-right: black 2px solid;
-  padding-right: 10px;
+.outer .inner-2 a {
+  color: rgb(18, 18, 18);
+  opacity: 0.5;
+  font-size: 18px;
+  letter-spacing: 1.9px;
 }
 
 .outer a h1 {
@@ -59,9 +70,10 @@ body {
 
 .outer .inner-3 a i {
   color: #0290ff;
-  font-size: 30px;
+  font-size: 36px;
+  letter-spacing: 1.9px;
 }
 
 .visited {
-  color: red !important;
+  opacity: 1 !important;
 }
